@@ -1,6 +1,5 @@
 import os
-from dotenv import load_dotenv
-load_dotenv()
+from mistralai import Mistral, UserMessage
 
 
 api_key = os.getenv("MISTRAL_API_KEY")
