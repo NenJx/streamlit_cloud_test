@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from mistralai import Mistral, UserMessage
 
 
@@ -24,7 +25,7 @@ chat_response = client.chat.complete(
     ]
 )
 result1 = chat_response.choices[0].message.content
-print(result1)
+st.write(result1)
 
 
 chat_response = client.chat.complete(
@@ -37,4 +38,4 @@ chat_response = client.chat.complete(
     ]
 )
 result2 = chat_response.choices[0].message.content
-print(result2)
+st.write(result2)
