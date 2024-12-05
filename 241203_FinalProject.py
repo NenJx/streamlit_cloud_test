@@ -2,10 +2,10 @@ import os
 import json
 import streamlit as st
 from openai import OpenAI
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # 데이터 로드
-# load_dotenv()
+load_dotenv()
 client = OpenAI(api_key=os.getenv("GPT_API_KEY"))
 
 # NPC 데이터 로드 함수
@@ -24,7 +24,7 @@ def chat_with_npc(prompt, npc_description, history):
         npc_response = response.choices[0].message.content
 
         # 감정 분석 추가 호출
-        emotion_prompt = f"이 텍스트의 감정을 하나의 단어로 요약하세요: '{npc_response}'"
+        emotion_prompt = f"이 텍스트의 감정을 딱 하나의 단어로 표현하세요.: '{npc_response}'"
         emotion_response = client.chat.completions.create(
             messages=[{"role": "user", "content": emotion_prompt}],
             model="gpt-4"
@@ -72,7 +72,7 @@ def display_chat_history():
         st.markdown(f"{role} {message['content']}")
 
 # Streamlit 애플리케이션
-st.title("NPC와의 상호작용 시뮬레이션")
+st.title("살아있는 NPC와 함께 풀어내는 이야기")
 initialize_state()  # 상태 초기화
 
 # NPC 선택
