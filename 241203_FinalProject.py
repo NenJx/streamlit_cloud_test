@@ -2,10 +2,10 @@ import os
 import json
 import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 # 데이터 로드
-load_dotenv()
+# load_dotenv()
 client = OpenAI(api_key=os.getenv("GPT_API_KEY"))
 
 # NPC 데이터 로드 함수
