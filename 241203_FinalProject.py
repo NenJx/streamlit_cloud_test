@@ -72,7 +72,7 @@ def display_chat_history():
         st.markdown(f"{role} {message['content']}")
 
 # Streamlit 애플리케이션
-st.title("살아있는 NPC와 함께 풀어내는 이야기")
+st.title("AI NPC와 풀어내는 이야기")
 initialize_state()  # 상태 초기화
 
 # NPC 선택
